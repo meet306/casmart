@@ -17,7 +17,27 @@ for (let i = 0; i < navElemArr.length; i++) {
     overlay.classList.toggle("active");
   });
 }
+const images = [
+  " https://www.bodycraft.co.in/wp-content/uploads/young-woman-lying-cosmetologist-s-table-during-rejuvenation-procedure-2.jpg",
+  " https://www.bodycraft.co.in/wp-content/uploads/young-woman-lying-cosmetologist-s-table-during-rejuvenation-procedure-2.jpg",
+  " https://www.bodycraft.co.in/wp-content/uploads/young-woman-lying-cosmetologist-s-table-during-rejuvenation-procedure-2.jpg",
+  "https://www.bodycraft.co.in/wp-content/uploads/young-woman-lying-cosmetologist-s-table-during-rejuvenation-procedure-2.jpg"
+];
 
+let current = 0;
+const sliderImage = document.getElementById("sliderImage");
+
+function changeImage() {
+  current = (current + 1) % images.length;
+  sliderImage.style.opacity = 0;
+
+  setTimeout(() => {
+    sliderImage.src = images[current];
+    sliderImage.style.opacity = 1;
+  }, 500);
+}
+
+setInterval(changeImage, 3000); // Change every 3 seconds
 
 
 /**
